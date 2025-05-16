@@ -40,7 +40,7 @@ router.delete("/post/:slug", async (request, response) => {
   try {
     const test = await Post.findOneAndDelete({slug: request.params.slug})
     // const post = await Post.findByIdAndDelete(request.params.slug);
-    if (!post) {
+    if (!test) {
       return response.status(404).send("Post wasn't found");
     }
     response.status(204).send();
